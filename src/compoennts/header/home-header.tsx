@@ -1,10 +1,14 @@
-import { Flex } from "antd"
+import { cn } from "@/src/utils"
 
 export default () => {
+
     return (
-        <Flex justify="space-between" align="center" className="w-full p-4 h-[64px]">
+        <div className={cn(
+            "w-full  px-0 h-[96px] flex items-center justify-center",
+            "md:justify-between md:px-[30px] md:py-0 md:h-[64px]"
+        )}>
             <h1>Logo</h1>
-            <a href="/home">Go to Main Site</a>
-        </Flex>
+            <a className="md:inline hidden" href="/home">Go to Main Site</a>
+        </div>
     )
 }
