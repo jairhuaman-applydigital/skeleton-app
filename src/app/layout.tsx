@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import StyledComponentsRegistry from "../components/antd/AntdRegistry";
 import { ConfigProvider } from "antd";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledComponentsRegistry>
-          <ConfigProvider>{children}</ConfigProvider>
-        </StyledComponentsRegistry>
+        <UserProvider>
+          <StyledComponentsRegistry>
+            <ConfigProvider>{children}</ConfigProvider>
+          </StyledComponentsRegistry>
+        </UserProvider>
       </body>
     </html>
   );

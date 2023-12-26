@@ -1,9 +1,19 @@
+"use client";
 import { Button } from "antd";
 
 import HomeHeader from "../header/home-header";
 import { cn } from "@/utils";
+import { useRouter } from "next/navigation";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function HomeLayout() {
+  const { user, error, isLoading } = useUser();
+  const router = useRouter();
+
+  // CHECK: apparently if these lines are available the button styles change
+  // if (isLoading) return <div>Loading...</div>;
+  // if (error) return <div>{error.message}</div>;
+
   return (
     <>
       <HomeHeader />
@@ -20,15 +30,19 @@ export default function HomeLayout() {
           Lorem ipsum dolor sit amet consectetur adipisicing esse voluptate,
           rerum dol
         </p>
-        <Button
-          style={{ height: "60px" }}
-          className={cn("my-[40px]")}
-          size="large"
-          type="primary"
-          block
-        >
-          Log In{" "}
-        </Button>
+
+        {!user && (
+          <Button
+            style={{ height: "60px" }}
+            className={cn("my-[40px]")}
+            size="large"
+            type="primary"
+            block
+            onClick={() => router.push("/api/auth/login")}
+          >
+            Log In
+          </Button>
+        )}
 
         <p className="mt-4">
           Don't have an account?
