@@ -1,8 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import StyledComponentsRegistry from '../src/compoennts/antd/AntdRegistry'
 import { ConfigProvider } from 'antd'
+import StyledComponentsRegistry from '@/components/antd/AntdRegistry'
+import { UserProvider } from '@auth0/nextjs-auth0/client'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,9 +21,11 @@ export default function RootLayout({
     <html lang="en">
       <body >
         <StyledComponentsRegistry>
-          <ConfigProvider theme={{ hashed: false }}> 
-            {children}
-          </ConfigProvider>
+          <UserProvider>
+            <ConfigProvider theme={{ hashed: false }}>
+              {children}
+            </ConfigProvider>
+          </UserProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
