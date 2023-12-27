@@ -29,7 +29,7 @@ export default function Sidebar({ children }: { children: ReactNode }) {
         setUserToggled(true);
     };
 
-    console.log(isCollapsed);
+    
     return (
         <Layout className="overflow-hidden">
             <Header

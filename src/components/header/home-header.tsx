@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function HomeHeader() {
   const { user, error, isLoading } = useUser();
 
-  console.log(user)
+  
   return (
     <div
       className={cn(
