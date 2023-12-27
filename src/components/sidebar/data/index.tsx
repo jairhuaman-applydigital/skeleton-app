@@ -1,5 +1,6 @@
 import { FunctionComponentElement, createElement } from "react";
 import { HomeOutlined, UserOutlined, FolderOutlined, BoxPlotOutlined, EditOutlined, MessageOutlined } from '@ant-design/icons';
+import Link from "next/link";
 
 export interface IMenuItem {
     key: string;
@@ -12,54 +13,54 @@ const menuItems: IMenuItem[] = [
         key: 'sidebar-menu-home',
         icon: createElement(HomeOutlined),
         label: (
-            <a href="/dashboard/" >
+            <Link href="/dashboard/" >
                 Home
-            </a>
+            </Link>
         ),
     },
     {
         key: 'sidebar-menu-account',
         icon: createElement(UserOutlined),
         label: (
-            <a href="/dashboard/" >
+            <Link href="/dashboard/" >
                 Account
-            </a>
+            </Link>
         ),
     },
     {
         key: 'sidebar-menu-files',
         icon: createElement(FolderOutlined),
         label: (
-            <a href="/dashboard/" >
+            <Link href="/dashboard/" >
                 Files
-            </a>
+            </Link>
         ),
     },
     {
         key: 'sidebar-menu-hardware',
         icon: createElement(BoxPlotOutlined),
         label: (
-            <a href="/dashboard/" >
+            <Link href="/dashboard/" >
                 Hardware
-            </a>
+            </Link>
         ),
     },
     {
         key: 'sidebar-menu-resources',
         icon: createElement(EditOutlined),
         label: (
-            <a href="/dashboard/" >
+            <Link href="/dashboard/" >
                 Resources
-            </a>
+            </Link>
         ),
     },
     {
         key: 'sidebar-menu-contact',
         icon: createElement(MessageOutlined),
         label: (
-            <a href="/dashboard/" >
+            <Link href="/dashboard/" >
                 Contact
-            </a>
+            </Link>
         ),
     },
 ]
