@@ -1,6 +1,6 @@
+import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
 import StyledComponentsRegistry from '../src/compoennts/antd/AntdRegistry'
 import { ConfigProvider } from 'antd'
 
@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body >
         <StyledComponentsRegistry>
-          <ConfigProvider>
+          <ConfigProvider theme={{ hashed: false }}> 
             {children}
           </ConfigProvider>
         </StyledComponentsRegistry>
@@ -28,3 +28,11 @@ export default function RootLayout({
     </html>
   )
 }
+
+/**
+ * Config provider theme - hashed: false
+ * This allow to override ant design classes otherwise will show the following class components
+ * "css-dev-only-do-not-override"
+ * Ref: https://github.com/ant-design/ant-design/issues/41926
+ */
+
