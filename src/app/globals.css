@@ -2,3 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.ant-layout-sider {
+  overflow: hidden;
+  @apply w-full !important;
+  @apply max-w-full !important;
+  @apply flex-auto !important;
+
+  @apply md:flex-auto !important;
+  @apply md:max-w-[200px] !important;
+  @apply md:w-[200px] !important;
+}
+.ant-layout-sider-zero-width {
+  flex: 0 0 0px !important;
+  max-width: 0px !important;
+  min-width: 0px !important;
+  width: 0px !important;
+}
+
+.ant-layout-sider-children {
+  @apply md:flex md:flex-col md:justify-between;
+}
+.sidebar-menu-button {
+  @apply md:hidden !important;
+}
