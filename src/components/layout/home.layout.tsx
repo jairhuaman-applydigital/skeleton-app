@@ -45,7 +45,7 @@ export default function HomeLayout() {
         )}
 
         <p className="mt-4">
-          Don't have an account?
+          Don&apos;t have an account?
           <a className="ml-2 underline" href="/">
             Get in Touch
           </a>{" "}
