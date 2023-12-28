@@ -22,3 +22,6 @@
 .ant-layout-sider-children {
   @apply md:flex md:flex-col md:justify-between;
 }
+.sidebar-menu-button {
+  @apply md:hidden !important;
+}

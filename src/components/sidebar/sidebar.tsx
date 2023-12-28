@@ -41,7 +41,7 @@ export default function Sidebar({ children }: { children: ReactNode }) {
             >
                 <p>Ideon</p>
                 <Button
-                    className={cn("md:hidden")}
+                    className={"sidebar-menu-button"}
                     onClick={toggleSidebar}
                     type="dashed"
                 >
