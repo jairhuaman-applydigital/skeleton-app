@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body >
+      <body>
         <StyledComponentsRegistry>
           <UserProvider>
             <ConfigProvider theme={{ hashed: false }}>
@@ -38,4 +38,3 @@ export default function RootLayout({
  * "css-dev-only-do-not-override"
  * Ref: https://github.com/ant-design/ant-design/issues/41926
  */
-

@@ -1,7 +1,3 @@
-export default function Dashboard(){
-  return (
-    <main>
-            Main Content
-    </main>
-  );
+export default function Dashboard() {
+  return <main>Main Content</main>;
 }

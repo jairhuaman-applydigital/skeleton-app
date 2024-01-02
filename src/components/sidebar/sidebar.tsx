@@ -29,14 +29,13 @@ export default function Sidebar({ children }: { children: ReactNode }) {
     setUserToggled(true);
   };
 
-    
   return (
     <Layout className="overflow-hidden">
       <Header
         style={{ background: "transparent" }}
         className={cn(
           "flex items-center justify-between w-full absolute",
-          "md:relative"
+          "md:relative",
         )}
       >
         <p>Ideon</p>
@@ -45,7 +44,7 @@ export default function Sidebar({ children }: { children: ReactNode }) {
           onClick={toggleSidebar}
           type="dashed"
         >
-                    Menu
+          Menu
         </Button>
       </Header>
 
@@ -69,7 +68,7 @@ export default function Sidebar({ children }: { children: ReactNode }) {
           <div
             className={cn(
               "w-full flex justify-between px-[24px] h-[48px] items-center",
-              "md:hidden"
+              "md:hidden",
             )}
           >
             <h2>Logo</h2>
@@ -88,7 +87,7 @@ export default function Sidebar({ children }: { children: ReactNode }) {
           />
           <div className="px-[24px] mt-8">
             <Button type="default" block>
-                            Log out
+              Log out
             </Button>
           </div>
         </Sider>
