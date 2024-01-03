@@ -10,8 +10,6 @@ export default function HomeLayout() {
   const { user } = useUser();
   const router = useRouter();
 
-  if (user) router.push("/dashboard");
-
   return (
     <>
       <HomeHeader />
