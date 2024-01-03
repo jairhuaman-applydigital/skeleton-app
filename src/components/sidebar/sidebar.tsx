@@ -1,3 +1,4 @@
+"use client";
 import { Button, Layout, Menu, theme } from "antd";
 import { CloseOutlined } from "@ant-design/icons";
 import { ReactNode, useEffect, useState } from "react";
@@ -5,6 +6,7 @@ import { menuItems } from "./data";
 import { Header } from "antd/es/layout/layout";
 import useWindowWidth from "@/hooks/useWindowWidth";
 import { cn } from "@/utils";
+import { useRouter } from "next/navigation";
 
 const { Content, Sider } = Layout;
 
@@ -12,6 +14,7 @@ export default function Sidebar({ children }: { children: ReactNode }) {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
   const [userToggled, setUserToggled] = useState<boolean>(false);
   const width = useWindowWidth();
+  const router = useRouter();
 
   useEffect(() => {
     if (!!width) {
@@ -86,7 +89,11 @@ export default function Sidebar({ children }: { children: ReactNode }) {
             items={menuItems}
           />
           <div className="px-[24px] mt-8">
-            <Button type="default" block>
+            <Button
+              type="default"
+              block
+              onClick={() => router.push("api/auth/logout")}
+            >
               Log out
             </Button>
           </div>

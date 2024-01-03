@@ -7,12 +7,8 @@ import { useRouter } from "next/navigation";
 import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function HomeLayout() {
-  const { user, error, isLoading } = useUser();
+  const { user } = useUser();
   const router = useRouter();
-
-  // CHECK: apparently if these lines are available the button styles change
-  // if (isLoading) return <div>Loading...</div>;
-  // if (error) return <div>{error.message}</div>;
 
   return (
     <>
