@@ -20,7 +20,7 @@ export default function HomeLayout() {
       <div
         className={cn(
           "flex flex-col items-center max-w-[600px]  px-[40px] mx-auto pt-[20px] h-[calc(100%_-_200px)]",
-          "md:h-[calc(100%_-_120px)] md:justify-center md:pt-[0px]"
+          "md:h-[calc(100%_-_120px)] md:justify-center md:pt-[0px]",
         )}
       >
         <h2 className={cn("text-4xl mb-[40px] font-bold", "md:mb-[20px]")}>
@@ -54,7 +54,7 @@ export default function HomeLayout() {
       <div
         className={cn(
           "flex flex-col items-center text-[10px] ",
-          "md:text-[12px] md:flex-row md:justify-around md:max-w-[800px] md:mx-auto"
+          "md:text-[12px] md:flex-row md:justify-around md:max-w-[800px] md:mx-auto",
         )}
       >
         <a
