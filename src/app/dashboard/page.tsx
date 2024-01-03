@@ -1,8 +1,9 @@
-import { withPageAuthRequired, getSession } from "@auth0/nextjs-auth0";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { getUserProfileData } from "@/services/profile.service";
 
 export default withPageAuthRequired(
   async function Dashboard() {
-    const { user } = await getSession();
+    const user = await getUserProfileData();
 
     return (
       <>
