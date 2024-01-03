@@ -1,18 +1,6 @@
-import {
-  getSession,
-  withMiddlewareAuthRequired,
-} from "@auth0/nextjs-auth0/edge";
-import type { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+import { withMiddlewareAuthRequired } from "@auth0/nextjs-auth0/edge";
 
-export default withMiddlewareAuthRequired(async function middleware(
-  req: NextRequest,
-) {
-  const res = NextResponse.next();
-  const user = await getSession(req, res);
-  res.cookies.set("hl", user?.language);
-  return res;
-});
+export default withMiddlewareAuthRequired();
 
 export const config = {
   matcher: "(.*)",
