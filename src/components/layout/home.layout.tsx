@@ -34,7 +34,7 @@ export default function HomeLayout() {
             size="large"
             type="primary"
             block
-            onClick={() => router.push("/api/auth/login?returnTo=/dashboard")}
+            onClick={() => router.push("/api/auth/login")}
           >
             Log In
           </Button>
