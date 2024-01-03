@@ -7,12 +7,10 @@ import { useRouter } from "next/navigation";
 import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function HomeLayout() {
-  const { user, error, isLoading } = useUser();
+  const { user } = useUser();
   const router = useRouter();
 
-  // CHECK: apparently if these lines are available the button styles change
-  // if (isLoading) return <div>Loading...</div>;
-  // if (error) return <div>{error.message}</div>;
+  if (user) router.push("/dashboard");
 
   return (
     <>
@@ -38,7 +36,7 @@ export default function HomeLayout() {
             size="large"
             type="primary"
             block
-            onClick={() => router.push("/api/auth/login")}
+            onClick={() => router.push("/api/auth/login?returnTo=/dashboard")}
           >
             Log In
           </Button>
