@@ -1,10 +1,10 @@
 "use client";
-import { Button } from "antd";
 
-import HomeHeader from "../header/home-header";
 import { cn } from "@/utils";
 import { useRouter } from "next/navigation";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import { Button } from "../button";
+import { HomeHeader } from "../header";
 
 export default function HomeLayout() {
   const { user, error, isLoading } = useUser();
@@ -23,21 +23,18 @@ export default function HomeLayout() {
           "md:h-[calc(100%_-_120px)] md:justify-center md:pt-[0px]",
         )}
       >
-        <h2 className={cn("text-4xl mb-[40px] font-bold", "md:mb-[20px]")}>
-          A Portal
-        </h2>
-        <p className="text-center mt-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing esse voluptate,
-          rerum dol
-        </p>
-
+        <div className="text-center">
+          <h2 className={cn("text-4xl  font-bold", "md:mb-[20px]")}>
+            A Portal
+          </h2>
+          <p className="text-center mt-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing esse voluptate,
+            rerum dol
+          </p>
+        </div>
         {!user && (
           <Button
-            style={{ height: "60px" }}
-            className={cn("my-[40px]")}
-            size="large"
-            type="primary"
-            block
+            className="w-full h-[60px] text-[20px] rounded-full"
             onClick={() => router.push("/api/auth/login")}
           >
             Log In
@@ -48,7 +45,7 @@ export default function HomeLayout() {
           Don&apos;t have an account?
           <a className="ml-2 underline" href="/">
             Get in Touch
-          </a>{" "}
+          </a>
         </p>
       </div>
       <div
