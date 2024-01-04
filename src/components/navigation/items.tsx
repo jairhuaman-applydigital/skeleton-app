@@ -7,7 +7,7 @@ export function NavigationItems({ href, icon, label }: IMenuItem) {
     <li>
       <Link
         className={cn(
-          "flex items-center gap-x-2 w-full p-[12px] hover:bg-gray-100"
+          "flex items-center gap-x-2 w-full p-[12px] hover:bg-gray-100",
         )}
         href={href}
       >

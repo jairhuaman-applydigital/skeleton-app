@@ -7,7 +7,7 @@ describe("<Button />", () => {
   });
 
   it("should display a text", () => {
-    // Arrange
+    // Act
     render(<Button>Log In</Button>);
 
     // Assert

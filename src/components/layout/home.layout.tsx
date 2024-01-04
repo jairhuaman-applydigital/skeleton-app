@@ -1,10 +1,10 @@
 "use client";
 
-import HomeHeader from "../header/home-header";
 import { cn } from "@/utils";
 import { useRouter } from "next/navigation";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { Button } from "../button";
+import { HomeHeader } from "../header";
 
 export default function HomeLayout() {
   const { user, error, isLoading } = useUser();
@@ -19,8 +19,8 @@ export default function HomeLayout() {
       <HomeHeader />
       <div
         className={cn(
-          "flex flex-col items-center max-w-[600px]  px-[40px] mx-auto pt-[20px] gap-y-[40px] h-[calc(100%_-_200px)]",
-          "md:h-[calc(100%_-_120px)] md:justify-center md:pt-[0px]"
+          "flex flex-col items-center max-w-[600px]  px-[40px] mx-auto pt-[20px] h-[calc(100%_-_200px)]",
+          "md:h-[calc(100%_-_120px)] md:justify-center md:pt-[0px]",
         )}
       >
         <div className="text-center">
@@ -41,8 +41,8 @@ export default function HomeLayout() {
           </Button>
         )}
 
-        <p>
-          Don't have an account?
+        <p className="mt-4">
+          Don&apos;t have an account?
           <a className="ml-2 underline" href="/">
             Get in Touch
           </a>
@@ -51,7 +51,7 @@ export default function HomeLayout() {
       <div
         className={cn(
           "flex flex-col items-center text-[10px] ",
-          "md:text-[12px] md:flex-row md:justify-around md:max-w-[800px] md:mx-auto"
+          "md:text-[12px] md:flex-row md:justify-around md:max-w-[800px] md:mx-auto",
         )}
       >
         <a
